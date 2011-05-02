@@ -15,6 +15,7 @@ fi
 if [ "x$FFSERVER" != x ]; then
   echo "ffserver running at $FFSERVER, killing."
   kill -9 $FFSERVER
+  rm /tmp/webcam.ffm
 fi
 echo "ffserver starting"
 ffserver
