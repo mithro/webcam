@@ -12,16 +12,16 @@
 <script type="text/javascript">
   var _gaq = _gaq || [];
 
+  var ua='UA-23055712-3';
   if (window.location.hostname == 'vaio.mithis.com') {
-     _gaq.push(['_setAccount', 'UA-23055712-1']);
+     ua = 'UA-23055712-1';
   } else if (window.location.hostname == 'skyline.mithis.com') {
-     _gaq.push(['_setAccount', 'UA-23055712-2']);
+     ua = 'UA-23055712-2';
   } else {
      // Unknown host
-     _gaq.push(['_setAccount', 'UA-23055712-3']);
      _gaq.push(['_setDomainName', 'none']);
   }
-
+  _gaq.push(['_setAccount', ua]);
   _gaq.push(['_trackPageview']);
 
   (function() {
@@ -66,7 +66,7 @@ flowplayer("player",
 			events: {
 				all: true
 			},
-			accountId: "UA-23055712-1" // your Google Analytics id here
+			accountId: ua // your Google Analytics id here
 		}
 	}
 });
