@@ -19,6 +19,7 @@ while true; do
 		# Restart the network
                 /etc/init.d/wpa-ifupdown restart
                 /etc/init.d/networking restart
+                /etc/init.d/network-manager restart
 		# Wait for the network to restart properly
 		sleep 1
 		# Restart the IPv6 tunnel
