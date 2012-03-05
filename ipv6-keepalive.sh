@@ -15,15 +15,19 @@ while true; do
                 modprobe -r $WIRELESS
                 modprobe $WIRELESS
 		# Wait for the module to get it's act together
-                sleep 1
+                sleep 5
 		# Restart the network
                 /etc/init.d/wpa-ifupdown restart
                 /etc/init.d/networking restart
                 /etc/init.d/network-manager restart
 		# Wait for the network to restart properly
-		sleep 1
+		sleep 60
 		# Restart the IPv6 tunnel
-		/etc/init.d/gw6c restart
+		#killall -9 gw6c
+		/etc/init.d/aiccu stop
+		sleep 5
+		/etc/init.d/aiccu start
+		sleep 5
         fi
 done
 
